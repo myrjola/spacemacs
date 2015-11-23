@@ -4,6 +4,9 @@
 * Table of Contents                                         :TOC_4_org:noexport:
  - [[Installation][Installation]]
  - [[Commands][Commands]]
+   - [[Global bindings][Global bindings]]
+   - [[Headers mode][Headers mode]]
+   - [[View mode][View mode]]
  - [[Configuration][Configuration]]
    - [[Multiple Accounts][Multiple Accounts]]
    - [[Example configuration][Example configuration]]
@@ -24,9 +27,25 @@ the layer variable =mu4e-installation-path=, for example:
 
 * Commands
 
+** Global bindings
+
 | Keybinding | Command    |
 |------------+------------|
 | SPC a M    | Start mu4e |
+
+** Headers mode
+
+| Keybinding | Command                                                     |
+|------------+-------------------------------------------------------------|
+| J          | Go to next unread thread marking other mail read on the way |
+
+** View mode
+
+| Keybinding | Command                                                     |
+|------------+-------------------------------------------------------------|
+| J          | Go to next unread thread marking other mail read on the way |
+| C-j        | Next header                                                 |
+| C-k        | Previous header                                             |
 
 * Configuration
 Configuration varies too much to give precise instructions.  What follows is one

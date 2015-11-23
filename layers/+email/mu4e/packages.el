@@ -26,10 +26,26 @@
         :mode mu4e-main-mode
         :bindings
         (kbd "j") 'mu4e~headers-jump-to-maildir)
-      (evilified-state-evilify-map mu4e-headers-mode-map
-        :mode mu4e-headers-mode)
-      (evilified-state-evilify-map mu4e-view-mode-map
-        :mode mu4e-view-mode)
+
+      (evilified-state-evilify-map
+       mu4e-headers-mode-map
+       :mode mu4e-headers-mode
+       :bindings
+       (kbd "J") (lambda ()
+                   (interactive)
+                   (mu4e-headers-mark-thread-using-markpair '(read))))
+
+      (evilified-state-evilify-map
+       mu4e-view-mode-map
+       :mode mu4e-view-mode
+       :bindings
+       (kbd "C-j") 'mu4e-view-headers-next
+       (kbd "C-k") 'mu4e-view-headers-prev
+       (kbd "J") (lambda ()
+                   (interactive)
+                   (mu4e~view-in-headers-context
+                    (mu4e-headers-mark-thread-using-markpair '(read))
+                    (mu4e-headers-next-unread))))
 
       (setq mu4e-completing-read-function 'helm--completing-read-default)
 
