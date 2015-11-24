@@ -31,6 +31,8 @@
        mu4e-headers-mode-map
        :mode mu4e-headers-mode
        :bindings
+       (kbd "C-j") 'mu4e-headers-next
+       (kbd "C-k") 'mu4e-headers-prev
        (kbd "J") (lambda ()
                    (interactive)
                    (mu4e-headers-mark-thread-using-markpair '(read))))
