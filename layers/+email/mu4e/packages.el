@@ -35,7 +35,7 @@
        (kbd "C-k") 'mu4e-headers-prev
        (kbd "J") (lambda ()
                    (interactive)
-                   (mu4e-headers-mark-thread-using-markpair '(read))))
+                   (mu4e-headers-mark-thread nil '(read))))
 
       (evilified-state-evilify-map
        mu4e-view-mode-map
@@ -45,9 +45,7 @@
        (kbd "C-k") 'mu4e-view-headers-prev
        (kbd "J") (lambda ()
                    (interactive)
-                   (mu4e~view-in-headers-context
-                    (mu4e-headers-mark-thread-using-markpair '(read))
-                    (mu4e-headers-next-unread))))
+                    (mu4e-view-mark-thread '(read))))
 
       (setq mu4e-completing-read-function 'helm--completing-read-default)
 
